@@ -6,7 +6,10 @@ body {
 }
 
 canvas {
-    background-color: #111;
-    border: 2px solid #0f0;
     margin-top: 10px;
+}
+
+#score {
+    font-size: 20px;
+    margin: 10px 0;
 }
