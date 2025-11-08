@@ -16,15 +16,26 @@ let score = 0;
 document.addEventListener("keydown", directionHandler);
 
 function directionHandler(event) {
-  // on ne change que nextDirection, pas la vitesse
-  if (event.key === "ArrowLeft" && direction !== "RIGHT")
-    nextDirection = "LEFT";
-  else if (event.key === "ArrowUp" && direction !== "DOWN")
-    nextDirection = "UP";
-  else if (event.key === "ArrowRight" && direction !== "LEFT")
-    nextDirection = "RIGHT";
-  else if (event.key === "ArrowDown" && direction !== "UP")
-    nextDirection = "DOWN";
+  switch (event.key) {
+    case "ArrowLeft":
+      if (direction !== "RIGHT") nextDirection = "LEFT";
+      break;
+
+    case "ArrowUp":
+      if (direction !== "DOWN") nextDirection = "UP";
+      break;
+
+    case "ArrowRight":
+      if (direction !== "LEFT") nextDirection = "RIGHT";
+      break;
+
+    case "ArrowDown":
+      if (direction !== "UP") nextDirection = "DOWN";
+      break;
+
+    default:
+      break;
+  }
 }
 
 // dessiner la grille (plateau)
